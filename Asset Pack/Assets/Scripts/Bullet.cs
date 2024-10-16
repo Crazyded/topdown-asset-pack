@@ -12,25 +12,29 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _currentLifetime = lifetime;
+        Destroy(gameObject, lifetime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         Move();
-        CheckLifetime();
     }
 
-    private void CheckLifetime()
+    /*private void CheckLifetime()
     {
         if (_currentLifetime <= 0)
             Destroy(gameObject);
         else
             _currentLifetime -= Time.deltaTime;
-    }
+    }*/
     private void Move()
     {
-        _rb.velocity = transform.forward * speed * Time.deltaTime;
+        _rb.velocity = transform.up * speed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.TryGetComponent(out TopDownController _) && gameObject)
+        Destroy(gameObject);
     }
 }
