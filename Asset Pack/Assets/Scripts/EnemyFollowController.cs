@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class EnemyFollowController : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private LayerMask damageLayerMask;
     //[SerializeField] private float minFollowDistance;
     private Rigidbody2D _rb;
     private Transform _followTarget;
@@ -36,6 +37,11 @@ public class EnemyFollowController : MonoBehaviour
         {
             _isCollided = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (LayerMaskUtil.ContainsLayer(damageLayerMask, collision.gameObject))
+        {
+            gameObject.SetActive(false);
         }
     }
 

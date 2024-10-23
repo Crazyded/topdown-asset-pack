@@ -208,3 +208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  damageLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
