@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b38b8df5ce3bc94a82a19c569314298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAiming: 1
   bulletPrefab: {fileID: 3741317508988055912, guid: f760299a996c7204fab99986938a757d, type: 3}
   shootDelay: 2
   firePoint: {fileID: 9170001589335673056}
