@@ -19,14 +19,6 @@ public class Bullet : MonoBehaviour
     {
         Move();
     }
-
-    /*private void CheckLifetime()
-    {
-        if (_currentLifetime <= 0)
-            Destroy(gameObject);
-        else
-            _currentLifetime -= Time.deltaTime;
-    }*/
     private void Move()
     {
         _rb.velocity = transform.up * speed;
@@ -34,7 +26,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.TryGetComponent(out TopDownController _) && gameObject)
+        if (!collision.gameObject.TryGetComponent(out TopDownController _))
         Destroy(gameObject);
     }
 }
