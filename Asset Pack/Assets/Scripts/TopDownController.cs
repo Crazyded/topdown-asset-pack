@@ -11,8 +11,10 @@ public class TopDownController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
+    [SerializeField] private LayerMask KeyLayerMask;
     private Rigidbody2D _rb;
     private Camera _mainCamera;
+    public int Counter { get; private set; }
     void Awake()
     {
        _rb = GetComponent<Rigidbody2D>(); 
@@ -53,6 +55,11 @@ public class TopDownController : MonoBehaviour
         if (LayerMaskUtil.ContainsLayer(damageLayerMask, collision.gameObject))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (LayerMaskUtil.ContainsLayer(KeyLayerMask, collision.gameObject))
+        {
+            Counter = Counter+1;
+            Debug.Log(Counter);
         }
     }
 }

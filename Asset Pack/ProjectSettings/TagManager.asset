@@ -8,15 +8,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Key
   - Water
   - UI
   - Player
   - Enemy
   - PlayerBullet
   - EnemyBullet
-  - 
-  - 
+  - Door
+  - Splinters
   - 
   - 
   - 
