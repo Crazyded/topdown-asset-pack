@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
-using Unity.Android.Types;
 using UnityEngine;
 
 public class Door : MonoBehaviour
