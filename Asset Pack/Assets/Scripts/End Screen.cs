@@ -21,7 +21,7 @@ public class EndScreen : MonoBehaviour
     {
         if (LayerMaskUtil.ContainsLayer (playercheck, collision.gameObject)) 
         {
-            SceneManager.LoadScene("EndScreen");
+            SceneManager.LoadScene("End Screen");
         }
     }
 }
